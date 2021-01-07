@@ -1,0 +1,110 @@
+<!-- динамические данные interpolation?-->
+<!-- value of variable title came from basis-syntax.component.ts -->
+<!--<p>{{title}}</p>-->
+<p><strong>42 - 2 = {{number - 2}}</strong></p>
+<p><strong>Without variables: 40 + 2 = {{40 + 2}}</strong></p>
+<p><strong>String example: {{'Hello' + ' World!'}}</strong></p>
+<p><strong>Array: {{arr}}</strong></p>
+<p><strong>Object: {{obj.a}}</strong></p>
+<p><strong>Object: {{obj.b.c}}</strong></p>
+<hr>
+<!--<div>-->
+<!--  binding - привязка динамики к шаблону<br>-->
+<!--  Сейчас про [односторонее привязывание] - сама следит за изменением переменной - из ts привязываем к html-->
+<!--</div>-->
+<!--<img src="{{img}}" alt="" width="250" height="250"> &lt;!&ndash; ts связан с html ЭТО ИНТЕРПОЛЯЦИЯ&ndash;&gt;-->
+<!--<img [src]="img" alt="" width="250" height="250"> &lt;!&ndash; html связан с ts - ЭТО ПРИМЕР БАЙНДИНГА&ndash;&gt;-->
+<!--<hr>-->
+<!--<p>event binding - это тоже односторонний байндинг только наоборот - из html в ts</p>-->
+<!--<p>(input) - слушаем событие для input</p>-->
+<!--<p>чтобы передать нативный ивент, мы должны использовать $-синтаксис</p>-->
+<!--<input type="text" (input)="onInput($event)"><br>-->
+<!--<input type="text" (keyup)="onInput($event)">reacts when button is up-->
+<!--<p><strong>{{inputValue}}</strong></p>-->
+<!--<button (click)="onClick()">Press Me!</button><br><br>-->
+<!--events with given event-type: (to see effect press enter or take focus out-->
+<!--<input type="text" (keyup.enter)="onInput1($event)" (blur)="onBlur(myInput.value)" #myInput><br>-->
+<!--<p><strong>{{inputValue1}}</strong></p>-->
+<!-- #myInput - ссылка на этот элемент в ангуляре-->
+<!-- keyup.enter отработает когда нажму enter-->
+<!--<p>2-way data binding - мы можем что-то менять в html или в ts и изменения моментально отражаются и там, и там</p>-->
+<!--<input type="text" [value]="title1" (input)="onInput2($event)">-->
+<!--<p>{{title1}}</p><br>-->
+<!--есть способ удобнее (import FormsModule in module): <br>-->
+<!--<input type="text" [(ngModel)]="title2">-->
+<!--<p>{{title2}}</p>-->
+<!--<p><strong>Директивы</strong> - вспомогательные аттрибуты, которые позволяют управлять поведением HTML-элементов/других компонентов</p>-->
+<!--<button (click)="backgroundToggle = !backgroundToggle">Change background color with [ngStyle]</button>-->
+<!--<div [ngStyle]="{-->
+<!--                  width: '200px',-->
+<!--                  height: '200px',-->
+<!--                  borderRadius: '5px',-->
+<!--                  border: '1px solid #ccc',-->
+<!--                  background: backgroundToggle ? 'red' : 'blue'-->
+<!--                }">-->
+<!--</div>-->
+
+<!--<p [ngClass]="{ red: backgroundToggle,-->
+<!--                blue: !backgroundToggle}">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, modi!</p>-->
+
+<!--<p [class.blue]="!backgroundToggle"-->
+<!--    [class.red]="backgroundToggle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, rem!</p>-->
+<!--<strong>Структурные директивы:</strong> изменяют структуру HTML-шаблона<br>-->
+
+<!--<p class="red">Lorem ipsum dolor sit amet.</p>-->
+<!--<p class="blue">Lorem ipsum dolor sit amet.</p>-->
+
+<!--<button (click)="toggle = !toggle">Change background color with [ngStyle]</button>-->
+<!--<p *ngIf="toggle" class="red">This paragraph will be shown/hidden when button is pressed</p>-->
+<!--<p *ngIf="!toggle" class="blue">This is another paragraph will be shown/hidden when button is pressed</p>-->
+<!--если директива является структурной, то ставим * <br>-->
+<!--   * говорит о том, что мы хотим изменить шаблон <br>-->
+
+<!--<p *ngIf="toggle; else blueP" class="red">*ngIf-else example RED</p>-->
+<!--<ng-template #blueP>-->
+<!--  <p class="blue">*ngIf-else example BLUE</p>-->
+<!--</ng-template>-->
+
+<!--<br><br>-->
+<!--<button (click)="toggle=111">Set toggle = 111</button>-->
+<!--<div [ngSwitch]="toggle">-->
+<!--  <p *ngSwitchCase="true" class="red">ngSwitch directive RED</p>-->
+<!--  <p *ngSwitchCase="false" class="blue">ngSwitch directive BLUE</p>-->
+<!--  <p *ngSwitchDefault>ngSwitch directive DEFAULT</p>-->
+<!--</div><br><br>-->
+
+<!--<strong>ngFor</strong>-->
+<!--<ul>-->
+<!--  <li *ngFor="let number of arr1; let idx = index">-->
+<!--    {{idx+1}}: <strong>{{[number]}}</strong>-->
+<!--  </li>-->
+<!--</ul>-->
+<!--<br><br>-->
+<!--Array of object:-->
+<!--<ul style="list-style: none">-->
+<!--  <li *ngFor="let post of objects">-->
+<!--      <p>title+author: {{post.title}} <b>{{post.author}}</b></p>-->
+<!--      <ul>comments:-->
+<!--        <li *ngFor="let comment of post.comments">-->
+<!--          <div>-->
+<!--            <small>{{comment.name}}</small>-->
+<!--            <p>{{comment.text}}</p>-->
+<!--          </div>-->
+<!--        </li>-->
+<!--      </ul>-->
+<!--  </li>-->
+<!--</ul>-->
+
+<!--<strong>PIPES:</strong> это трансофмеры отображения данных<br>-->
+<!--<p>-->
+<!--  Date:<br>{{now}}-->
+<!--</p>-->
+<!--<p>-->
+<!--  Date | pipe date:<br>{{now | date}}-->
+<!--</p>-->
+<!--<p>-->
+<!--  Date | (pipe) date 'small':<br>{{now | date: 'small'}}-->
+<!--</p>-->
+<!--<p>-->
+<!--  Date | (pipe) date 'long' | uppercase | lowercase:<br>{{now | date: 'long' | uppercase | lowercase}}-->
+<!--</p>-->

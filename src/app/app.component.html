@@ -1,14 +1,12 @@
-<h1>Hello, Angular!</h1>
+<div class="container">
+  <h1>Angular Components!</h1>
+  <app-post-form></app-post-form>
+  <hr />
+  <app-post
+    *ngFor="let p of posts"
+    [post] = "p"
+  ></app-post>
+</div>
 
-<!-- динамические данные -->
-<!-- value of variable title came from app.component.ts -->
-<p>{{title}}</p>
-<p><strong>42 - 2 = {{number - 2}}</strong></p>
-<p><strong>Array: {{arr}}</strong></p>
-<p><strong>Object: {{obj.a}}</strong></p>
-<p><strong>Object: {{obj.b.c}}</strong></p>
-<hr>
-<app-post></app-post>
-<!--<app-post></app-post>-->
-<hr>
-<app-post4></app-post4>
+<!--<app-basis-syntax></app-basis-syntax>-->
+<!--<app-post4></app-post4>-->

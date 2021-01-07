@@ -1,15 +1,21 @@
 import {Component} from '@angular/core';
 
+export interface Post {
+  title: string;
+  text: string;
+  id?: number;
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
 
-// введём динамические данные прямо в шаблон
 export class AppComponent {
-  title = 'Dynamic title';
-  number = 42;
-  arr = [1, 2, 3];
-  obj = {a: 1, b: {c: 2}};
+  title = 'angular-basics';
+  posts: Post[] = [
+    {title: 'Want to learn Angular Components', text: 'I still learn components', id: 1},
+    {title: 'Next part of Angular Components', text: 'This part is about directives and pipes', id: 2}
+  ];
 }

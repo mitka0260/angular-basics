@@ -1,0 +1,30 @@
+<div class="container">
+  <h1>Angular Directives</h1>
+
+  <p appStyle>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, reiciendis!</p>
+
+  <p appStyle2="blue" fontWeight="bold" [dStyles]="{border: '1px solid blue', borderRadius: '5px'}">
+    blue and bold text when mouse on
+  </p>
+
+  <p appStyle2="red" fontWeight="bold" [dStyles]="{border: '5px solid blue', borderRadius: '10px'}">
+    red and bold text when mouse on
+  </p>
+
+  <button class="btn" (click)="isVisible = !isVisible">Toggle</button>
+  <div *ngIf="isVisible" class="wrap">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, totam?</p>
+  </div>
+
+  <ng-template [ngIf]="isVisible">
+    <div class="wrap">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, totam?</p>
+    </div>
+  </ng-template>
+
+  <div class="wrap" *appIfnot="!isVisible">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, totam?</p>
+  </div>
+
+
+</div>

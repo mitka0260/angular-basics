@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Services</title>
+</head>
+<body>
+
+
+<div class="card">
+  <h2>App Counter: {{appCounterService.counter}}</h2>
+  <button class="btn" (click)="appCounterService.increase()">+</button>
+  <button class="btn" (click)="appCounterService.decrease()">-</button>
+</div>
+
+<div class="card">
+  <h2>Local Counter: {{localCounterServices.counter}}</h2>
+  <button class="btn" (click)="localCounterServices.increase()">+</button>
+  <button class="btn" (click)="localCounterServices.decrease()">-</button>
+</div>
+
+
+</body>
+</html>

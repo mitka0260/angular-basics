@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {PostsService} from '../posts.service';
+import {ActivatedRoute, Params, Router} from '@angular/router';
 
 @Component({
   selector: 'app-posts',
@@ -8,9 +9,31 @@ import {PostsService} from '../posts.service';
 })
 export class PostsComponent implements OnInit {
 
-  constructor(private postsService: PostsService) { }
+  showIds = false;
 
-  ngOnInit(): void {
+  constructor(
+    private postsService: PostsService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {
   }
 
+  ngOnInit(): void {
+    this.route.queryParams.subscribe((params: Params) => {
+      // console.log('Params: ', params);
+      this.showIds = !!params.showIds;  // привели строку к boolean-типу
+    });
+    this.route.fragment.subscribe(fragment => {
+      console.log('Fragment: ', fragment);
+    });
+  }
+
+  showIdsProgram(): void {
+    this.router.navigate(['/posts'], {
+      queryParams: {
+        showIds: true
+      },
+      fragment: 'program-fragment'
+    });
+  }
 }

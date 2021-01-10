@@ -2,7 +2,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule, Provider} from '@angular/core';
 
 import {AppComponent} from './app.component';
-import {PostComponent} from './post/post.component';
+// import {PostComponent} from './post/post.component';
 // import {Post4Component} from './post4/post4.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {PostFormComponent} from './post-form/post-form.component';
@@ -28,6 +28,8 @@ import {AboutExtraComponent} from './routing/about-extra/about-extra.component';
 import {HomeComponent} from './routing/home/home.component';
 import {PostsComponent} from './routing/posts/posts.component';
 import {AppRoutingModule} from './routing/app-routing.module';
+import {PostComponent} from './routing/post/post.component';
+import { ErrorPageComponent } from './routing/error-page/error-page.component';
 // import { BasisSyntaxComponent } from './basis-syntaxis/basis-syntax.component';
 
 const INTERCEPTOR_PROVIDER: Provider = {
@@ -39,7 +41,7 @@ const INTERCEPTOR_PROVIDER: Provider = {
 @NgModule({
   declarations: [
     AppComponent,
-    PostComponent,
+    // PostComponent,
     // Post4Component,
     PostFormComponent,
     DirectivesComponent,
@@ -60,7 +62,9 @@ const INTERCEPTOR_PROVIDER: Provider = {
     AboutComponent,
     AboutExtraComponent,
     HomeComponent,
-    PostsComponent
+    PostComponent,
+    PostsComponent,
+    ErrorPageComponent
   ],
   imports: [
     BrowserModule,
